@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Logo, Search Bar, and Username</title>
+  <!-- Material Symbols for search icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #5a199b;
+      color: white;
+      max-height: 60px;
+      
+    }
+    .paceholder{
+      display: flex;
+      flex: 1;
+      height: 2%;
+    }
+
+    .logo img {
+      max-height: 100px;
+    }
+
+    .search-bar {
+      flex: 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .search-bar input {
+      width: 90%;
+      max-width: 600px;
+      padding: 8px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+    
+    }
+
+    .search-bar button {
+      padding: 4px 10px;
+      border: none;
+      background-color: #5a199b;
+      color: white;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-bar button:hover {
+      background-color: rgb(207, 71, 207);
+    }
+
+    .user-info {
+      flex: 1;
+      height: 40px;
+      width: 30px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .user-info .username {
+      padding: 2px;
+      font-size: 20px;
+    }
+
+    .user-info {
+      margin-left: 10px;
+      width: 35px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .user-info .avatar{
+      width: auto;
+      height: 2rem;
+      margin: 0 12px 0px 2px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+
+    <nav class="navbar" id="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Logo">
+      </div>
+      
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button>
+          <span class="material-symbols-outlined">search</span>
+        </button>
+      </div>
+      
+      <div class="user-info">
+        <div class="username">Hello, User!</div>
+        <div class="avatar">
+
+          <img class="avatar" src="avtar.png" alt="User Avatar">
+        </div>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>
