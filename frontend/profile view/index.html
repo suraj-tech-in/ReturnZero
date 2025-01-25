@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navbar and Edit Profile</title>
+    <title>Edit Profile | Innovathon</title>
     <!-- External Stylesheets and Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
@@ -110,7 +113,7 @@
         border: 2px solid #5a199b;
       }
 
-      .profile-picture-section img{
+      .profile-picture-section img {
         transition: all 0.2s;
       }
 
@@ -203,20 +206,20 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">
-        <img src="logo.png" alt="Logo">
+        <img src="logo.png" alt="Logo" />
       </div>
-      
+
       <div class="search-bar">
-        <input type="text" placeholder="Search...">
+        <input type="text" placeholder="Search..." />
         <button>
           <span class="material-symbols-outlined">search</span>
         </button>
       </div>
-      
+
       <div class="user-info">
         <div class="username">Hello, User!</div>
         <div class="avatar">
-          <img src="avtar.png" alt="User Avatar">
+          <img src="avtar.png" alt="User Avatar" />
         </div>
       </div>
     </nav>
@@ -226,7 +229,11 @@
       <!-- Profile Picture Section -->
       <div class="profile-picture-section">
         <h2 class="profile-header">Edit Profile Picture</h2>
-        <img id="profile-picture" src="https://via.placeholder.com/150" alt="" />
+        <img
+          id="profile-picture"
+          src="https://via.placeholder.com/150"
+          alt=""
+        />
         <input type="file" id="upload-picture" accept="image/*" />
       </div>
 
@@ -243,7 +250,10 @@
         </div>
         <div class="form-group">
           <label for="bio">Bio:</label>
-          <textarea id="bio" placeholder="Write something about yourself"></textarea>
+          <textarea
+            id="bio"
+            placeholder="Write something about yourself"
+          ></textarea>
         </div>
         <button id="save-profile-btn">Save Profile</button>
       </div>
@@ -251,7 +261,10 @@
       <!-- Posts Section -->
       <div class="posts-section">
         <h2>Your Posts</h2>
-        <textarea id="post-input" placeholder="Write your post here..."></textarea>
+        <textarea
+          id="post-input"
+          placeholder="Write your post here..."
+        ></textarea>
         <button id="add-post-btn">Add Post</button>
         <ul id="posts-list"></ul>
       </div>
