@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.app {
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-top: 20px;
+}
+
+nav {
+  height: 10vh;
+  background-color: blueviolet;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+.description {
+  padding-top: 10px;
+}
+
+.filters {
+  color: #b300ff;
+}
+
+.anchor-button {
+  display: inline-block;
+  background-color: #681eb2;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.anchor-button:hover {
+  background-color: #4f1688;
+}
+
+.buttons {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.buttons a {
+  margin-left: 5px;
+}
