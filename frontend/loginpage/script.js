@@ -1,67 +1,84 @@
-// Select the form and its elements
-const registrationForm = document.getElementById('registration-form');
-const loginForm = document.getElementById('login-form');
-const errorMessage = document.getElementById('error-message');
-const loginErrorMessage = document.getElementById('login-error-message');
-const toggleForm = document.getElementById('toggle-form');
-
-// Registration form submission event
-registrationForm.addEventListener('submit', (event) => {
-  event.preventDefault(); // Prevent form from reloading the page
-
-  // Get user input values
-  const username = document.getElementById('username').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
-  const confirmPassword = document.getElementById('confirm-password').value.trim();
-
-  // Basic validation
-  if (!username || !email || !password || !confirmPassword) {
-    errorMessage.textContent = 'All fields are required!';
-    return;
-  }
-
-  if (password !== confirmPassword) {
-    errorMessage.textContent = 'Passwords do not match!';
-    return;
-  }
-
-  if (password.length < 8) {
-    errorMessage.textContent = 'Password must be at least 8 characters long.';
-    return;
-  }
-
-  // Success message
-  errorMessage.style.color = 'green';
-  errorMessage.textContent = 'Registration successful!';
-  registrationForm.reset(); // Clear form
-});
-
-// Login form submission event
-loginForm.addEventListener('submit', (event) => {
-  event.preventDefault(); // Prevent form from reloading the page
-
-  // Get user input values
-  const loginUsername = document.getElementById('login-username').value.trim();
-  const loginPassword = document.getElementById('login-password').value.trim();
-
-  // Basic validation
-  if (!loginUsername || !loginPassword) {
-    loginErrorMessage.textContent = 'Both fields are required!';
-    return;
-  }
-
-  // Success message
-  loginErrorMessage.style.color = 'green';
-  loginErrorMessage.textContent = 'Login successful!';
-  loginForm.reset(); // Clear form
-});
-
 // Toggle between registration and login forms
-toggleForm.addEventListener('click', (event) => {
-  event.preventDefault();
-  registrationForm.style.display = registrationForm.style.display === 'none' ? 'block' : 'none';
-  loginForm.style.display = loginForm.style.display === 'none' ? 'block' : 'none';
-  errorMessage.textContent = '';
-  loginErrorMessage.textContent = '';
+document.querySelectorAll("#toggle-form").forEach((link) => {
+  link.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("registration-form").style.display =
+          document.getElementById("registration-form").style.display === "none"
+              ? "block"
+              : "none";
+      document.getElementById("login-form").style.display =
+          document.getElementById("login-form").style.display === "none"
+              ? "block"
+              : "none";
+  });
+});
+
+// Registration form submission
+document.getElementById("registration-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirm-password").value;
+
+  // Check if passwords match
+  if (password !== confirmPassword) {
+      document.getElementById("error-message").textContent = "Passwords do not match!";
+      return;
+  }
+
+  try {
+      const response = await fetch("/register", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, email, password }),
+      });
+
+      const result = await response.json();
+      if (response.status === 201) {
+          alert(result.message);
+          // Clear the form fields
+          document.getElementById("registration-form").reset();
+          // Switch to login form
+          document.getElementById("toggle-form").click();
+      } else {
+          document.getElementById("error-message").textContent = result.message;
+      }
+  } catch (error) {
+      console.error("Error during registration:", error);
+      document.getElementById("error-message").textContent = "Something went wrong.";
+  }
+});
+
+// Login form submission
+document.getElementById("login-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById("login-username").value;
+  const password = document.getElementById("login-password").value;
+
+  try {
+      const response = await fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+      });
+
+      const result = await response.json();
+      if (response.status === 200) {
+          alert(result.message);
+          // Redirect to dashboard or home page
+          window.location.href = "/dashboard";
+      } else {
+          document.getElementById("login-error-message").textContent = result.message;
+      }
+  } catch (error) {
+      console.error("Error during login:", error);
+      document.getElementById("login-error-message").textContent = "Something went wrong.";
+  }
 });
