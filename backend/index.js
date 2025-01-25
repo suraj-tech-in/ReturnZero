@@ -8,6 +8,8 @@ const collection = require('./config.js')
 app.use('/static', express.static(path.join(__dirname, '../frontend')));
 
 app.use(express.json());
+app.use(express.json());
+app.use(express.urlencoded({extended: false}))
 
 // Serve the specific main.html file for the root route
 app.get('/', (req, res) => {
@@ -31,6 +33,25 @@ app.get('/register', (req, res) => {
         }
     });
 });
+
+app.post("/register",async (req,res)=>{
+        const data = {
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password
+
+        }
+
+        const existingUser = await collection.findOne({name: data.name})
+
+        if(existingUser){
+            res.send('Username already exist please choose another name')
+        }
+
+
+        const userdata = await collection.insertMany(data)
+        console.log(userdata)
+})
 
 
 app.listen(PORT, () => {
