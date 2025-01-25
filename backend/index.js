@@ -46,11 +46,11 @@ app.post("/register",async (req,res)=>{
 
         if(existingUser){
             res.send('Username already exist please choose another name')
+        }else{
+            const userdata = await collection.insertMany(data)
+            console.log(userdata)
         }
-
-
-        const userdata = await collection.insertMany(data)
-        console.log(userdata)
+      
 })
 
 
