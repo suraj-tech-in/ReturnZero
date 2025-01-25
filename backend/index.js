@@ -4,13 +4,10 @@ const PORT = 3000;
 const path = require('path');
 
 
-// Import routes
-const authRoutes = require('./routes/authRoutes');
 
 // Middleware
 app.use('/static', express.static(path.join(__dirname, '../frontend')));
 
-// Serve the specific main.html file for the root route
 app.get('/', (req, res) => {
     const filePath = path.join(__dirname, '../frontend', 'loginpage', 'landing-page', 'main.html');
     res.sendFile(filePath, (err) => {
