@@ -1,0 +1,115 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Profile Picture Section */
+.profile-picture-section img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 10px auto;
+  border: 2px solid #ddd;
+}
+
+.profile-picture-section input {
+  display: block;
+  margin: 10px auto;
+}
+
+/* Edit Profile Section */
+.edit-profile-section .form-group {
+  margin-bottom: 15px;
+}
+
+.edit-profile-section label {
+  font-weight: bold;
+}
+
+.edit-profile-section input, .edit-profile-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Buttons */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: block;
+  margin: 10px auto;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Posts Section */
+.posts-section textarea {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#posts-list {
+  list-style: none;
+  padding: 0;
+}
+
+#posts-list li {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.like-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.like-btn:hover {
+  background-color: #0056b3;
+}
+
+.like-count {
+  font-size: 0.9rem;
+  color: #555;
+  margin-left: 10px;
+}
