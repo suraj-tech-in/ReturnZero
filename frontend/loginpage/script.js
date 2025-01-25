@@ -1,3 +1,4 @@
+
 // Toggle between registration and login forms
 document.querySelectorAll("#toggle-form").forEach((link) => {
   link.addEventListener("click", (e) => {
