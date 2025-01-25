@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>profile</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="profile-container">
-    <!-- Profile Picture Section -->
-    <div class="profile-picture-section">
-      <h2>Profile Picture</h2>
-      <img id="profile-picture" src="https://via.placeholder.com/150" alt="Profile Picture">
-      <input type="file" id="upload-picture" accept="image/*">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile Section</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Rlq4jSL+EXtZq8aif7DauP/kdHlDXo4cXD5zl0v5wvWdy4bvm8Laa4K7s6i/jd1fNnQXek/IXXu4I1T+7M7UjQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="profile-container">
+      <!-- Profile Picture Section -->
+      <div class="profile-picture-section">
+        <h2 class="profile-header">Edit Profile Picture</h2>
+        <img
+          id="profile-picture"
+          src="https://via.placeholder.com/150"
+          alt=""
+        />
+        <input type="file" id="upload-picture" accept="image/*" />
+      </div>
+
+      <!-- Edit Profile Section -->
+      <div class="edit-profile-section">
+        <h2>Edit Profile</h2>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" placeholder="Enter username" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Enter email" />
+        </div>
+        <div class="form-group">
+          <label for="bio">Bio:</label>
+          <textarea
+            id="bio"
+            placeholder="Write something about yourself"
+          ></textarea>
+        </div>
+        <button id="save-profile-btn">Save Profile</button>
+      </div>
+
+      <!-- Posts Section -->
+      <div class="posts-section">
+        <h2>Your Posts</h2>
+        <textarea
+          id="post-input"
+          placeholder="Write your post here..."
+        ></textarea>
+        <button id="add-post-btn">Add Post</button>
+        <ul id="posts-list"></ul>
+      </div>
     </div>
 
-    <!-- Edit Profile Section -->
-    <div class="edit-profile-section">
-      <h2>Edit Profile</h2>
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" placeholder="Enter username">
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" placeholder="Enter email">
-      </div>
-      <div class="form-group">
-        <label for="bio">Bio:</label>
-        <textarea id="bio" placeholder="Write something about yourself"></textarea>
-      </div>
-      <button id="save-profile-btn">Save Profile</button>
-    </div>
-
-    <!-- Posts Section -->
-    <div class="posts-section">
-      <h2>Your Posts</h2>
-      <textarea id="post-input" placeholder="Write your post here..."></textarea>
-      <button id="add-post-btn">Add Post</button>
-      <ul id="posts-list"></ul>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
