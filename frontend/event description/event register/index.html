@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-left">
+        <h2>Register Your Team</h2>
+        <form id="registrationForm">
+          <div class="input-group">
+            <input type="text" id="name" placeholder="Name" required />
+            <input
+              type="text"
+              id="phone"
+              placeholder="Phone Number"
+              required
+              pattern="\d{10}"
+            />
+          </div>
+          <div class="input-group">
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="text" id="address" placeholder="Address" required />
+          </div>
+          <div class="input-group">
+            <input
+              type="number"
+              id="teamMemberNumber"
+              placeholder="Team Member Number"
+              required
+              min="1"
+            />
+          </div>
+          <button type="submit" id="submitButton" disabled>Register</button>
+        </form>
+      </div>
+      <div class="form-right">
+        <img src="image.png" alt="Your Image" class="form-image" />
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("registrationForm");
+      const submitButton = document.getElementById("submitButton");
+
+      form.addEventListener("input", () => {
+        const inputs = form.querySelectorAll("input");
+        const allFilled = Array.from(inputs).every(
+          (input) => input.value.trim() !== ""
+        );
+
+        if (
+          allFilled &&
+          document.getElementById("teamMemberNumber").value <= 6
+        ) {
+          submitButton.disabled = false;
+        } else {
+          submitButton.disabled = true;
+        }
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("You have been registered!");
+      });
+    </script>
+  </body>
+</html>
