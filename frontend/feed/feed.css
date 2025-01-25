@@ -114,9 +114,8 @@ body {
   background-color: #5a199b;
   color: white;
   height: 100px;
-  
 }
-.paceholder{
+.paceholder {
   display: flex;
   flex: 1;
   height: 2%;
@@ -139,7 +138,6 @@ body {
   padding: 8px;
   border: none;
   border-radius: 5px 0 0 5px;
-
 }
 
 .search-bar button {
@@ -178,7 +176,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
-.user-info .avatar{
+.user-info .avatar {
   width: auto;
   height: 2rem;
   margin: 0 12px 0px 2px;
@@ -222,7 +220,14 @@ footer {
   color: #adb5bd;
 }
 
-.footer-description{
+.footer-description {
   margin: -30px;
-  
+}
+
+/* ---------------------------IMAGES */
+.cs50-img {
+  transform: translateY(30px);
+}
+.nepalenergy {
+  transform: translateY(30px);
 }
