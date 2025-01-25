@@ -229,9 +229,9 @@ body {
   }
 
   .logo img {
-    height: 50px; 
-    max-height: 60px; 
-    object-fit: contain; 
+    height: 50px;
+    max-height: 60px;
+    object-fit: contain;
   }
 
   .user-info .avatar img {
@@ -248,7 +248,7 @@ body {
 
 /* Footer Styles */
 footer {
-  background-color: #343a40;
+  background-color: #5a199b;
   color: #ffffff;
   padding: 20px 0;
 }
@@ -279,7 +279,6 @@ footer {
   color: #adb5bd;
 }
 
-.footer-description{
+.footer-description {
   margin: -30px;
-  
 }
