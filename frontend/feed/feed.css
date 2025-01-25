@@ -86,7 +86,7 @@ button:hover {
 /*  FEED SECTION */
 .feed__section {
   width: 77vw;
-  height: 85vh;
+  height: 100%;
   margin-top: 20px;
   margin-bottom: 10px;
   margin-left: 10px;
@@ -182,4 +182,47 @@ body {
   width: auto;
   height: 2rem;
   margin: 0 12px 0px 2px;
+}
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.footer-section img {
+  width: 20%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 14px;
+  color: #adb5bd;
+}
+
+.footer-description{
+  margin: -30px;
+  
 }
