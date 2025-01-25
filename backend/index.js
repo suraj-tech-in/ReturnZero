@@ -2,6 +2,7 @@ const express = require('express');
 const app = express(); 
 const PORT = 3000; 
 const path = require('path');
+const collection = require('./config.js')
 
 // Serve static files (images, CSS, JS) from the 'frontend' folder
 app.use('/static', express.static(path.join(__dirname, '../frontend')));
@@ -21,7 +22,8 @@ app.get('/', (req, res) => {
 
 
 app.get('/register', (req, res) => {
-    const filePath = path.join(__dirname, '../frontend', 'loginpage', 'index.html'); // Adjust this path
+    const filePath = path.join(__dirname, '../frontend', 'loginpage', 'landing-page','index.html'); // Adjust this path
+
     res.sendFile(filePath, (err) => {
         if (err) {
             console.error('Error loading register page:', err);
